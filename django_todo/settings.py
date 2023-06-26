@@ -12,7 +12,12 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
-import env
+
+if os.path.isfile("env.py"):
+    import env
+    
+os.environ.get("postgres://sfuemnft:dYIQBq-GVHMExhQ-3rgM9SPqdHyRyt3F@lucky.db.elephantsql.com/sfuemnft")
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
